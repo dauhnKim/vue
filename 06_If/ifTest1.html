@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>If Test 1</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+      window.onload = function() {
+        // V-IF : 조건이 TRUE라면 표시
+        new Vue({
+          el: '#app',
+          data: {
+              myVisible: false
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <h1>true일 때만 표시하는 예제</h1>
+    <div id="app">
+      <label>
+        <input type="checkbox" v-model="myVisible"/>Display
+      </label>
+      <p v-if="myVisible">체크박스가 ON</p>
+    </div>
+  </body>
+</html>

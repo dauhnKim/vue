@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>dataText 1</title>
+    <link rel="stylesheet" href="../css/style.css" >
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+      window.onload = function() {
+        new Vue({
+          el: '#app',
+          data: {
+            myNumber: 920527,
+            myText: 'Dauhn Kim',
+            myBool: true
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <h1>여러가지 데이터형을 출력하는 예제</h1>
+    <div id="app">
+      <p>{{ myNumber }}</p>
+      <p>{{ myText }}</p>
+      <p>{{ myBool }}</p>
+    </div>
+  </body>
+</html>

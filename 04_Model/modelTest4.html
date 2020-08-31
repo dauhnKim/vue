@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Model Test 4</title>
+    <link rel="stylesheet" href="../css/style.css" >
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+    window.onload = function() {
+      new Vue({
+        el: '#app',
+        data: {
+          myChecks: []
+        }
+      })
+    }
+    </script>
+  </head>
+  <body>
+    <h1>Checkbox On/Off 상태 출력</h1>
+    <div id="app">
+      <label>
+        <input type="checkbox" value="red" v-model="myChecks">
+        Red
+      </label>
+      <label>
+        <input type="checkbox" value="green" v-model="myChecks">
+        Green
+      </label>
+      <label>
+        <input type="checkbox" value="yellow" v-model="myChecks">
+        Yellow
+      </label>
+      <p>Checked colors : {{ myChecks }}</p>
+    </div>
+  </body>
+</html>

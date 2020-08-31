@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>dataText 6</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+      window.onload = function() {
+        new Vue({
+          el: '#app',
+          data: {
+            myNumber: 920527,
+            myText: 'Dauhn Kim',
+            myBool: true,
+            myArray: [1,2,3,4,5]
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <h1>javascript로 만든 데이터를 출력하는 예제</h1>
+    <div id="app">
+      {{ $data }}
+      <hr>
+      <ul>
+        <li v-for="(item, key) in $data">{{ key }} : {{ item }}</li>
+      </ul>
+    </div>
+  </body>
+</html>

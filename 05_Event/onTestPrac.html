@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>On Test 4</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script type="text/javascript">
+      window.onload = function() {
+        new Vue({
+          el: '#app',
+          data: {
+            a: 0,
+            b: 0,
+            result: 0
+          },
+          methods: {
+            addCal: function() {
+              this.result = this.a + this.b;
+            },
+            subCal: function() {
+              this.result = this.a - this.b;
+            },
+            mulCal: function() {
+              this.result = this.a * this.b;
+            },
+            devCal: function() {
+              this.result = this.a / this.b;
+            }
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>간단한 계산기</h1>
+      <input v-model.number="a">
+      <input v-model.number="b">
+      <!--  v-model.number : 숫자의 문자열이 아니고 수식으로 처리됨  -->
+      <br> <br>
+      <button v-on:click="addCal"> + </button>
+      <button v-on:click="subCal"> - </button>
+      <button v-on:click="mulCal"> x </button>
+      <button v-on:click="devCal"> / </button>
+
+      <p>The result is {{ result }}</p>
+    </div>
+  </body>
+</html>

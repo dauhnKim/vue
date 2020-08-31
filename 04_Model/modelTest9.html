@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Model Test 9</title>
+    <link rel="stylesheet" href="../css/style.css" >
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+    window.onload = function() {
+      new Vue({
+        el: '#app',
+        data: {
+          myColor: []
+        }
+      })
+    }
+    </script>
+  </head>
+  <body>
+    <h1>복수의 선택을 배열로 처리하는 예제</h1>
+    <div id="app">
+      <select v-model="myColor" multiple style="width:200px; height: auto">
+        <option disabled value="">Choose colors</option>
+        <option>Navy</option>
+        <option>Black</option>
+        <option>Darkgreen</option>
+        <option>Lightblue</option>
+        <option>Purple</option>
+      </select>
+      <p>The colors you chose are {{ myColor }}</p>
+    </div>
+  </body>
+</html>

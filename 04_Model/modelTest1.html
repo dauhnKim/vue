@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Model Test 1</title>
+    <link rel="stylesheet" href="../css/style.css" >
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+    window.onload = function() {
+      // form 입력과 data를 연결할 때에는 v-model 사용
+      new Vue({
+        el: '#app',
+        data: {
+          myName: ''
+        }
+      })
+    }
+    </script>
+  </head>
+  <body>
+    <h1>입력한 문자 출력</h1>
+    <div id="app">
+      <input v-model="myName" placeholder="Your Name">
+      <p>My Name is {{ myName }}</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>For Test 2</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+      window.onload = function() {
+        new Vue({
+          el: '#app',
+          data: {
+            myArray: ['A', 'B', 'C', 'D']
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>1x5 ~ 10x5 를 반복 표시하는 예제</h1>
+      <ul>
+        <li v-for="n in 10"> {{ n }} x 5 = {{ n*5 }} </li>
+      </ul>
+
+      <h1>배열 데이터를 번호가 붙어 있는 리스트로 표시하는 예제</h1>
+      <ul>
+        <li v-for="(item, index) in myArray"> {{ index }} : {{ item }}</li>
+      </ul>
+    </div>
+  </body>
+</html>

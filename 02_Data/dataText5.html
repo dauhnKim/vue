@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>dataText 5</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+      window.onload = function() {
+        var teaList = [
+          {name:'AppleMint', price: 600},
+          {name:'Herb', price: 600},
+          {name:'Rose', price: 650}
+        ];
+        new Vue({
+          el: '#app',
+          data: {
+            myTea: teaList
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <h1>javascript로 만든 데이터를 출력하는 예제</h1>
+    <div id="app">
+      <p>{{ myTea }}</p>
+      <p>{{ myTea[1].name }}, {{ myTea[1].price }}원</p>
+      <p>{{ myTea[2].name }}, {{ myTea[2].price }}원</p>
+    </div>
+  </body>
+</html>

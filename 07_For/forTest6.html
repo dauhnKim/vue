@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>for Test 6</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+      window.onload = function() {
+        new Vue({
+          // 배열에서 값을 뽑아내기를 반복하며 조건을 만족할 때만 표시
+          // ---: <태그명 v-for="변수 in 배열" v-if="조건"> 조건을 만족할 때만 표시하는 부분 </태그명>
+
+          // 지정한 횟수만큼 반복하고 조건을 만족할 때만 표시
+          // ---: <태그명 v-for="변수 in 반복할 횟수" v-of="조건">조건을 만족할 때만 표시하는 부분</태그명>
+
+          el: '#app',
+          data: {
+            myArray: [1,2,3,4,5,67,8,55,88],
+          },
+          methods: {
+            evenData: function() {
+              this.myArray = this.myArray.filter(
+                function(value) {
+                  return value % 2 == 0;
+                }
+              )
+            }
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>짝수만 표시하는 예제</h1>
+      <ul>
+        <li v-for="item in myArray" v-if="item % 2 == 0">{{ item }}</li>
+      </ul>
+
+      <h1>버튼 클릭하면 짝수만 표시하는 예제</h1>
+      <ul>
+        <li v-for="item in myArray">{{ item }}</li>
+      </ul>
+      <button v-on:click="evenData()">짝수만 표시</button>
+    </div>
+  </body>
+</html>

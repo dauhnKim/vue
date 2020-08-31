@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Hello 3</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+      window.onload = function() {
+        new Vue({
+          el: '#app',
+          data: {
+            myText: '<h1>Hello World?!</h1>'
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <h1>HTML로 출력하는 예제</h1>
+    <div id="app">
+        <p>{{ myText }}</p>
+        <p v-text="myText"></p>
+        <p v-html="myText"></p>
+    </div>
+  </body>
+</html>

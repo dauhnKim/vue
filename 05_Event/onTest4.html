@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>On Test 4</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script type="text/javascript">
+      window.onload = function() {
+        new Vue({
+          el: '#app',
+          data: {
+            myText: 'Hello!',
+            myText2: 'Hi!'
+          },
+          methods: {
+            showAlert: function() {
+              alert('You just pressed Enter key.');
+            },
+            showAelrtTwo: function() {
+              alert('You just pressed Shift & Enter.');
+            }
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Enter 누르면 alert 표시</h1>
+      <p>{{ myText }}</p>
+      <input v-on:keyup.enter="showAlert" v-model.lazy="myText">
+
+      <h1>Shift, Enter 누르면 alert 표시</h1>
+      <p>{{ myText2 }}</p>
+      <input v-on:keyup.enter.shift="showAlertTwo" v-model.lazy="myText2">
+    </div>
+  </body>
+</html>

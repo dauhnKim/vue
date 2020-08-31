@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>For Test Prac</title>
+    <link rel="stylesheet" href="../css/style.css" >
+    <link rel="stylesheet" href="../css/table.css" >
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+    window.onload = function() {
+      new Vue({
+        el: '#app',
+        data: {
+          number_list: [2,3,4,5,6,7,8,9],
+          show: false
+        },
+        methods: {
+          addLast: function() {
+              this.number_list.push(1)
+          },
+          deleteNumber: function(index) {
+            this.number_list.splice(index, 1);
+          },
+          edit: function(index) {
+            this.number_list.splice(index, 1, this.number_list[index] + 1);
+          },
+          sortData: function() {
+            // 중복된 값 제거
+            this.number_list = this.number_list.filter(function(item, idx, array) {
+              return array.indexOf(item) === idx;
+            });
+
+            this.number_list.sort(function(a, b) {
+              return ( a < b ? -1 : 1 )
+            })
+          },
+          showGuGu: function() {
+              this.show = true;
+          }
+        }
+      })
+    }
+    </script>
+  </head>
+  <body>
+    <h1>숫자배열 조작과 구구단 출력</h1>
+    <div id="app">
+      <ul>
+        <li v-for="(item, index) in number_list">{{ item }}
+          <button v-on:click="edit(index)">변경</button>
+          <button v-on:click="deleteNumber(index)">삭제</button>
+        </li>
+      </ul>
+
+      <button v-on:click="addLast()">추가</button>
+      <button v-on:click="sortData()">소트</button>
+
+      <button v-on:click="showGuGu()">구구단 보이기</button>
+      <ul v-if="show">
+        <li v-for="item in number_list">
+          <p v-for="item2 in 9">{{ item }} x {{ item2 }} = {{ item * item2 }}</p>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

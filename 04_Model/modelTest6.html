@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Model Test 6</title>
+    <link rel="stylesheet" href="../css/style.css" >
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+    window.onload = function() {
+      new Vue({
+        el: '#app',
+        data: {
+          myRadio: ''
+        }
+      })
+    }
+    </script>
+  </head>
+  <body>
+    <h1>선택한 라디오 버튼 값 출력</h1>
+    <div id="app">
+      <label>
+        <input type="radio" value="red" v-model="myRadio">
+        Red
+      </label>
+      <label>
+        <input type="radio" value="green" v-model="myRadio">
+        Green
+      </label>
+      <label>
+        <input type="radio" value="yellow" v-model="myRadio">
+        Yellow
+      </label>
+      <p>Picked color : {{ myRadio }}</p>
+    </div>
+  </body>
+</html>

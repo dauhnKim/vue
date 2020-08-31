@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>If Test 2</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+      window.onload = function() {
+        // V-IF : 조건이 TRUE라면 표시
+        new Vue({
+          el: '#app',
+          data: {
+            isShow: true,
+            isShow2: true
+          },
+          methods: {
+            isGood: function(){
+              this.isShow = false
+            },
+            isGood2: function() {
+              this.isShow2 = false
+            }
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <h1>클릭하면 '좋아' 버튼 사라지게 하는 예제</h1>
+    <div id="app">
+      <button v-if="isShow" v-on:click="isGood">GOOD</button>
+      <button v-show="isShow2" v-on:click="isGood2">GOOD2</button>
+      <!-- 
+        v-if : HTML에서 삭제
+        v-show : CSS에서 display:none으로 그저 보이지 않게 함
+      -->
+    </div>
+  </body>
+</html>

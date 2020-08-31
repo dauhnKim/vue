@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>On Test 2</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script type="text/javascript">
+      // v-on 디렉티브 : 유저가 버튼을 클릭하거나 키보드를 통해 키입력을 하는 등의
+      //                이벤트가 발새할 때 Vue의 메소드를 실행시키는 이벤트
+      //                즉, 이벤트와 메소드를 연결
+      //                v-on: == @
+      window.onload = function() {
+        function good() {
+          alert('Nice~');
+        }
+        new Vue({
+          el: '#app',
+          data: {
+            isClick: false
+          },
+          methods: {
+            oneClick: function() {
+              this.isClick = true;
+              good();
+            }
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <h1>클릭하면 두번째는 누를 수 없게 되는 '좋아' 버튼 예제</h1>
+    <div id="app">
+      <button value="Good" v-bind:disabled="isClick" v-on:click="oneClick">좋아</button>
+    </div>
+  </body>
+</html>

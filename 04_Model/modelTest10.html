@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Model Test 10</title>
+    <link rel="stylesheet" href="../css/style.css" >
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+    window.onload = function() {
+      new Vue({
+        el: '#app',
+        data: {
+          myText: '',
+          myText2: '',
+          myNumber: 0
+        }
+      })
+    }
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>다 쓴 후 입력하는 예제</h1>
+      <!-- Enter or 포커스 이동 시 입력한 값이 출력  -->
+      <input v-model.lazy="myText">
+      <p>입력 후 표시 {{ myText }}</p>
+      <hr>
+
+      <h1>입력을 자동으로 수식으로 변경하는 예제</h1>
+      <!-- Enter or 포커스 이동 시 입력한 값이 출력  -->
+      <input v-model.number="myNumber" type="number">
+      <p>100을 더해서 표시 {{ 100 + myNumber }}</p>
+      <hr>
+
+      <h1>입력을 자동으로 수식으로 변경하지 않는 예제</h1>4
+      <!-- Enter or 포커스 이동 시 입력한 값이 출력  -->
+      <input v-model="myNumber" type="number">
+      <p>100을 더해서 표시 {{ 100 + myNumber }}</p>
+      <hr>
+
+      <h1>앞뒤의 공백을 자동으로 제거하는 예제</h1>
+      <!-- Enter or 포커스 이동 시 입력한 값이 출력  -->
+      <input v-model.trim="myText2">
+      <p>공백 제거 {{ myText2 }}</p>
+      <hr>
+    </div>
+  </body>
+</html>

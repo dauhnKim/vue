@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Model Test 2</title>
+    <link rel="stylesheet" href="../css/style.css" >
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+    window.onload = function() {
+      // form 입력과 data를 연결할 때에는 v-model 사용
+      new Vue({
+        el: '#app',
+        data: {
+          myText: ''
+        }
+      })
+    }
+    </script>
+  </head>
+  <body>
+    <h1>입력한 문장과 문자수 출력</h1>
+    <div id="app">
+      <textarea v-model="myText" rows="8" cols="80" placeholder="Write Something Here.."></textarea>
+      <p>My Sentence : {{ myText }}</p>
+      <p>The Length : {{ myText.length }}</p>
+    </div>
+  </body>
+</html>

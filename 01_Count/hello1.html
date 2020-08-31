@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Hello 1</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+      window.onload = function() {
+        new Vue({
+          el: '#app',
+          data: {
+            myText: 'Hello World?!'
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <h1>데이터를 있는 그대로 출력하는 예제</h1>
+    <div id="app">
+      {{myText}}
+    </div>
+  </body>
+</html>

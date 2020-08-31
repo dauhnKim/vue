@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>for Test 4</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+      window.onload = function() {
+        new Vue({
+          el: '#app',
+          data: {
+            myArray: ['1st', '2nd', '3rd', '4th', '5th']
+          },
+          methods: {
+            addLast: function() {
+              this.myArray.push("[맨 뒤에 추가]");
+            },
+            addObj: function(index) {
+              this.myArray.splice(index, 0, '[추가]');
+              // 해당하는 순번의 0을 Add로 바꿔라
+            },
+            changeObj: function(index) {
+              this.myArray.splice(index, 1, '[변경]');
+            },
+            deleteObj: function(index) {
+              this.myArray.splice(index, 1);
+              // 배열의 중간에 데이터를 삭제 : 배열.splice(지정위치, 1)
+            }
+           }
+
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>버튼으로 리스트 추가/삭제 예제</h1>
+      <ul>
+        <li v-for="item in myArray">{{ item }}</li>
+      </ul>
+
+      <button v-on:click="addLast">맨 뒤에 추가</button>
+      <button v-on:click="addObj(3)">네번째에 추가</button>
+      <button v-on:click="changeObj(0)">첫번째를 변경</button>
+      <button v-on:click="deleteObj(1)">두번째를 삭제</button>
+    </div>
+  </body>
+</html>

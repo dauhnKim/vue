@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>On Test 1</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script type="text/javascript">
+      // v-on 디렉티브 : 유저가 버튼을 클릭하거나 키보드를 통해 키입력을 하는 등의
+      //                이벤트가 발생할 때 Vue의 메소드를 실행시키는 이벤트
+      //                즉, 이벤트와 메소드를 연결
+      //                v-on: == @
+      window.onload = function() {
+        new Vue({
+          el: '#app',
+          data: {
+            count: 0
+          },
+          methods: {
+            countUp: function() {
+              this.count++;
+            }
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <h1>클릭하면 1이 증가하는 예제</h1>
+    <div id="app">
+      <p>{{ count }}</p>
+      <button v-on:click="countUp">1씩 증가</button>
+    </div>
+  </body>
+</html>

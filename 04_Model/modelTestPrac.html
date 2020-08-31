@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Model Test Prac</title>
+    <link rel="stylesheet" href="../css/style.css" >
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+    window.onload = function() {
+      // form 입력과 data를 연결할 때에는 v-model 사용
+      new Vue({
+        el: '#app',
+        data: {
+          myName: '',
+          myColor: 'Navy'
+        }
+      })
+    }
+    </script>
+  </head>.
+  <body>
+    <h1>입력폼 활용</h1>
+    <div id="app">
+      Name : <input v-model.lazy="myName" placeholder="Your Name">
+      <br>
+      Favourite Color : <br />
+      <label><input type="radio" value="navy" v-model="myColor">navy</label>
+      <label><input type="radio" value="black" v-model="myColor">black</label>
+      <label><input type="radio" value="darkgreen" v-model="myColor">darkgreen</label>
+      <label><input type="radio" value="purple" v-model="myColor">purple</label>
+
+      <p :style="{ color: myColor }">My Name is {{ myName }}, and my favourite color is {{ myColor }}.</p>
+    </div>
+  </body>
+</html>

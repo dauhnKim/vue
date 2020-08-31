@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Model Test 8</title>
+    <link rel="stylesheet" href="../css/style.css" >
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+    window.onload = function() {
+      new Vue({
+        el: '#app',
+        data: {
+          myColor: ''
+        }
+      })
+    }
+    </script>
+  </head>
+  <body>
+    <h1>문자열이 선택한 색으로 변하는 예제</h1>
+    <div id="app">
+      <select v-model="myColor">
+        <option disabled value="">Choose a color</option>
+        <option>Navy</option>
+        <option>Black</option>
+        <option>Darkgreen</option>
+        <option>Lightblue</option>
+        <option>Purple</option>
+      </select>
+      <p v-bind:style="{color: myColor}">The color you chose is {{ myColor }}</p>
+    </div>
+  </body>
+</html>

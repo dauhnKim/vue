@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>For Test 1</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+      window.onload = function() {
+        new Vue({
+          el: '#app',
+          data: {
+            myArray: ['Charlie Puth', 'Meghan Trainor', 'Sam Smith'],
+            objArray: [
+              {name: 'Charlie', age: '29'},
+              {name: 'Meghan', age: '29'},
+              {name: 'Sam', age: '30'}
+            ]
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>배열 데이터를 리스트로 표시하는 예제</h1>
+      <ul>
+        <li v-for="item in myArray">{{ item }}</li>
+      </ul>
+
+      <h1>오브젝트 배열 데이터를 리스트로 표시하는 예제</h1>
+      <ul>
+        <li v-for="item in objArray">{{ item.name }} / {{ item.age }}</li>
+      </ul>
+    </div>
+  </body>
+</html>

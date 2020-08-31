@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.js sample</title>
+    <link rel="stylesheet" href="../css/style.css" >
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+      window.onload = function() {
+        new Vue({
+          el: "#app", //어떤 HTML요소와 연결할지 지정
+          data: { // 어떤 데이터가 있는지를 지정 - data = 프로퍼티
+            count: 0
+          },
+          methods: { // 어떤 처리를 하는가
+            countUp: function() {
+              this.count++;
+            },
+            countDown: function(){
+              this.count--;
+            }
+          }
+          // computed : 어느 데이터를 사용하여 계산하는가
+          // watch : 어느 데이터를 감시하는가
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <h2>클릭하면 카운터가 올라갑니다.</h2>
+		<div id="app">
+			<p> {{count}}회</p>
+      <!-- 데이터를 있는 그대로 표시할 때는 이중중괄호 {{}} -->
+			<button v-on:click="countUp">카운트업!</button>
+			<button v-on:click="countDown">카운트다운!</button>
+		</div>
+
+  </body>
+</html>

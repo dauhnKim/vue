@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Model Test 5</title>
+    <link rel="stylesheet" href="../css/style.css" >
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script>
+      window.onload = function() {
+        new Vue({
+          el: '#app',
+          data: {
+            myAgree: false
+            // 동의하면 비활성화 해지
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <h1>동의에 체크하면 송신 버튼이 활성화되는 예제</h1>
+    <div id="app">
+      <label>
+        <input type="checkbox" v-model="myAgree">
+        I Agree.
+      </label>
+      <!-- <button v-bind:disabled="myAgree==false">Send</button> -->
+      <button v-bind:disabled="!myAgree">Send</button>
+    </div>
+  </body>
+</html>
